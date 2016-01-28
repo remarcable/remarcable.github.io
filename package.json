@@ -1,0 +1,24 @@
+{
+  "name": "lightningboss.github.io",
+  "version": "0.0.1",
+  "description": "Private webpage of Marc Nitzsche (marcnitzsche.de / lightningboss.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightningboss/lightningboss.github.io.git"
+  },
+  "author": "Marc Nitzsche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lightningboss/lightningboss.github.io/issues"
+  },
+  "homepage": "https://github.com/lightningboss/lightningboss.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
+}

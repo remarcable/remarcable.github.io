@@ -1,6 +1,7 @@
 # *SASS*
 .sass-cache/
 *.css.map
+*.css
 
 # *OS X*
 .DS_Store

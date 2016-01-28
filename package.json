@@ -17,8 +17,5 @@
   },
   "homepage": "https://github.com/lightningboss/lightningboss.github.io#readme",
   "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.1"
   }
 }

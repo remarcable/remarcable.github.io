@@ -1,10 +1,10 @@
 /*** Colors ***/
-$primary-color: red !default;
+$primary-color: #34495E !default;
 $secondary-color: green !default;
 
 /*** Fonts ***/
-$roboto-font-path: "../font/roboto/" !default;
-$icons-font-path: "../font/material-design-icons/" !default;
+$primary-font: 'Merriweather', serif;
+$secondary-font: 'Open Sans', sans-serif;
 
 /*** Global ***/
 // Media Query Ranges

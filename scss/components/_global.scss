@@ -1,0 +1,23 @@
+html {
+  font-family: $primary-font;
+}
+body {
+  width:100vw;
+  overflow-x: hidden;
+  height:auto;
+}
+h1 {
+  color:white;
+  font-weight:300;
+  font-style:italic;
+  margin:0;
+}
+h3 {
+  color:white;
+  font-weight:300;
+  font-style:normal;
+  margin:0;
+}
+.top {
+  z-index:1;
+}

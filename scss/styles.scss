@@ -1,9 +1,18 @@
 @charset "UTF-8";
 
-// Variables;
+// Variables
 @import "components/variables";
 
 // Reset
 @import "components/normalize";
 
 // components
+@import "components/global";
+@import "components/sections/sections";
+
+// individual sections
+@import "components/sections/coffee";
+@import "components/sections/astronaut";
+@import "components/sections/goals";
+@import "components/sections/me";
+@import "components/sections/references";

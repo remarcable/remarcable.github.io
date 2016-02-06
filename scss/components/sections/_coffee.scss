@@ -1,0 +1,25 @@
+#coffee {
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-image: url(.././img/coffee-mask.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  position:relative;
+  z-index:1;
+
+  article {
+    display:flex;
+    flex-direction:column;
+    margin-left:5%;
+  }
+  h1 {
+    font-size:5em;
+  }
+  h3 {
+    font-size:3em;
+  }
+}

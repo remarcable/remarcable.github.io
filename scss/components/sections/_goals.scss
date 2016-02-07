@@ -1,5 +1,41 @@
 #goals {
-  background-color:#FFF;
-  z-index:1;
-  position:relative;
+  background-color: #FFF;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #4C4F4F;
+  h1 {
+    color: $nice-grey;
+    font-weight: 700;
+    font-size: 3em;
+    margin: 0.92em 0;
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  h2 {
+    font-weight: 300;
+    font-style: italic;
+    display: inline-block;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    max-width:75%;
+  }
+  .column {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    max-width:350px;
+  }
+  p {
+    font-family: $secondary-font;
+    font-weight: 300;
+  }
 }

@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   h1 {
     color: $nice-grey;
     font-weight: 700;
@@ -16,11 +17,11 @@
     transform: translate(-50%,0);
   }
   .container {
-    // row of references
+    height: 33.33%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
   }
   a {
     cursor: default;
@@ -110,5 +111,14 @@
     &:focus {
       outline: none;
     }
+  }
+  p {
+    color: $nice-grey;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25em;
+    max-width: 75%;
+    margin: 20px;
+    text-align: center;
   }
 }

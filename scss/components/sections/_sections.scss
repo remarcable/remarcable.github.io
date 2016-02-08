@@ -1,6 +1,7 @@
 section {
-  height:100vh; // Don't forget min-height!
+  height:100vh; // Don't forget min-height! // Different sizing-method on mobile! just use 800px or less as hight to ship around viewport-problem!
   min-height:600px;
   width:100vw;
   overflow:hidden;
+  transition: .5s ease-in-out;
 }

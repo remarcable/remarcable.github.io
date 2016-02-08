@@ -424,7 +424,8 @@ section {
   height: 100vh;
   min-height: 600px;
   width: 100vw;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: .5s ease-in-out; }
 
 #coffee {
   display: flex;

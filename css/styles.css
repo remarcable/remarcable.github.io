@@ -526,7 +526,7 @@ section {
     height: 200px;
     overflow: hidden;
     border-radius: 100%;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
     margin-right: 40px; }
   #me .video {
     width: 100%;

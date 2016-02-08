@@ -6,13 +6,14 @@
   align-items: center;
 
   #helmet {
-    transform: rotate(-15deg);
+    transform: translateY(42vh) rotate(-15deg);
     width:400px;
     height:auto;
-    right:0;
-    bottom:-110%;
+    right:-8vw;
     opacity:0.3;
-    position:absolute;
+    position:fixed;
+    top:1vh;
+    z-index:0;
   }
   h1 {
     display: flex;

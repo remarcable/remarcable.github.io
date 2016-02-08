@@ -453,13 +453,14 @@ section {
   justify-content: center;
   align-items: center; }
   #astronaut #helmet {
-    transform: rotate(-15deg);
+    transform: translateY(42vh) rotate(-15deg);
     width: 400px;
     height: auto;
-    right: 0;
-    bottom: -110%;
+    right: -8vw;
     opacity: 0.3;
-    position: absolute; }
+    position: fixed;
+    top: 1vh;
+    z-index: 0; }
   #astronaut h1 {
     display: flex;
     flex-direction: column;
@@ -554,6 +555,8 @@ section {
       font-weight: 700; }
 
 #references {
-  background-color: #ECEDF3; }
+  background-color: #ECEDF3;
+  position: relative;
+  z-index: 1; }
 
 /*# sourceMappingURL=styles.css.map */

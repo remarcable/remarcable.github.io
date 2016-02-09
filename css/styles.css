@@ -504,7 +504,8 @@ website:    http://www.burocratik.com
   text-transform: uppercase;
   z-index: 1500;
   background-color: #f25648;
-  color: #ffffff; }
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif; }
 
 * html #outdated {
   position: absolute; }

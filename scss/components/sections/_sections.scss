@@ -1,7 +1,34 @@
 section {
-  height:100vh; // Don't forget min-height! // Different sizing-method on mobile! just use 800px or less as hight to ship around viewport-problem!
-  min-height:600px;
-  width:100vw;
-  overflow:hidden;
-  transition: height .5s ease-in-out;
+  height: 100vh; // Don't forget min-height! // Different sizing-method on mobile! just use 800px or less as hight to ship around viewport-problem!
+  min-height: 600px;
+  width: 100vw;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+footer {
+  background: linear-gradient(250deg, #5cdce5, #008cba);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+  height: 100px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    background: #FFFFFF;
+    border: 0 solid #4C4F4F;
+    box-shadow: 0 6px 20px 0 rgba(0,0,0,0.20), 0 8px 17px 0 rgba(0,0,0,0.19);
+    border-radius: 1px;
+    padding: 15px 40px;
+    font-family: Merriweather-LightItalic;
+    color: #4C4F4F;
+    line-height: 16px;
+    overflow: hidden;
+    &:focus {
+      outline: none;
+    }
+  }
 }

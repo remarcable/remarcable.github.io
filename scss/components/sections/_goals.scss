@@ -22,17 +22,17 @@
     font-weight: 300;
     font-style: italic;
     display: inline-block;
+    align-self: center;
   }
   .container {
     display: flex;
     align-items: center;
-    max-width:75%;
+    max-width: 75%;
   }
   .column {
-    display:flex;
-    align-items: center;
+    display: flex;
     flex-direction: column;
-    max-width:350px;
+    max-width: 350px;
   }
   p {
     font-family: $secondary-font;

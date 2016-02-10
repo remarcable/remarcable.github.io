@@ -1,5 +1,6 @@
 #me {
-  background-color: #000;
+  background-color: $nice-grey;
+  position: relative;
   #marc {
     width: 200px;
     height: 200px;
@@ -17,7 +18,7 @@
     align-items: center;
   }
   .video div:not(.container) {
-    opacity: 0.6;
+    opacity: 0.4;
   }
   .container {
     display: flex;

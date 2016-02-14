@@ -1,88 +1,45 @@
-html {
-  font-family: $primary-font;
-}
+//* General Styles
+// Make sure that absolute-positioned elements don't make the page scroll horizontally
 body {
   width: 100vw;
-  overflow-x: hidden;
   height: auto;
+  overflow-x: hidden;
 }
-h1 {
+h1,
+h2,
+h3 {
+  font-family: $primary-font;
   color: white;
   font-weight: 300;
   font-style: italic;
   margin: 0;
 }
 h3 {
-  color: white;
-  font-weight: 300;
   font-style: normal;
-  margin: 0;
 }
-.top {
-  z-index: 1;
+// There is some weird positioning going on here. Mixin for headline used in references and goals
+.headline {
+  color: $nice-grey;
+  font-weight: 700;
+  font-size: 3em;
+  margin: 0.92em 0;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
 }
-.vertical-line {
-  background-color: #999999;
-  width: 1px;
-  height: 60vh;
-  margin: 0 65px;
-}
-.svg {
-  width: 150px;
-  height: 150px;
-  margin: 1em;
-  align-self: center;
-}
-// Smart underlined
-.smart-underlined {
-  color: inherit;
-  text-decoration: none;
-  background: -webkit-linear-gradient(white, white), -webkit-linear-gradient(white, white), -webkit-linear-gradient(#4C4F4F, #4C4F4F);
-  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  text-shadow: 0.03em 0 white, -0.03em 0 white, 0 0.03em white, 0 -0.03em white, 0.06em 0 white, -0.06em 0 white, 0.09em 0 white, -0.09em 0 white, 0.12em 0 white, -0.12em 0 white, 0.15em 0 white, -0.15em 0 white;
-  background-position-y: 90%, 90%, 90%;
-  background-position-x: 0%, 100%, 0;
-}
-.smart-underlined::selection {
-  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-  background: #b4d5fe;
-}
-.smart-underlined::-moz-selection {
-  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-  background: #b4d5fe;
-}
+//* Force images and figures with class .no-drag to be not draggable
 .no-drag {
   user-drag: none;
   user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
-// gradient animation keyframes
-@-webkit-keyframes GradientAnimation {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+// Container used in goals and me
+.align-container {
+  display: flex;
+  align-items: center;
+  max-width: 75%;
 }
-@-moz-keyframes GradientAnimation {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
-}
+//* Keyfrages for Gradient Animation
 @keyframes GradientAnimation {
   0% {
     background-position: 0 50%;
@@ -94,16 +51,13 @@ h3 {
     background-position: 0 50%;
   }
 }
-// bounce to top hover effect
+// Bounce to top hover-effect
 .hvr-bounce-to-top {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -moz-osx-font-smoothing: grayscale;
   position: relative;
-  -webkit-transition-property: color, transform;
+  transform: translateZ(0);
   transition-property: color, transform;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
+  -moz-osx-font-smoothing: grayscale;
 }
 .hvr-bounce-to-top:before {
   content: "";
@@ -114,29 +68,21 @@ h3 {
   right: 0;
   bottom: 0;
   background: $primary-color;
-  -webkit-transform: scaleY(0);
   transform: scaleY(0);
-  -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .hvr-bounce-to-top:hover,
 .hvr-bounce-to-top:focus,
 .hvr-bounce-to-top:active {
   color: white;
-  -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 .hvr-bounce-to-top:hover:before,
 .hvr-bounce-to-top:focus:before,
 .hvr-bounce-to-top:active:before {
-  -webkit-transform: scaleY(1);
   transform: scaleY(1);
-  -webkit-transition-timing-function: cubic-bezier(.55,0,.1,1);
   transition-timing-function: cubic-bezier(.55,0,.1,1);
 }

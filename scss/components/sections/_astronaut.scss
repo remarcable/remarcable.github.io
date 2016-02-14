@@ -1,43 +1,39 @@
 #astronaut {
-  background-color:$primary-color;
-  display:flex;
-  flex-direction:row;
+  background-color: $primary-color;
+  display: flex;
   justify-content: center;
   align-items: center;
-
-  #helmet {
-    transform: translateY(42vh) rotate(-15deg);
-    width:400px;
-    height:auto;
-    right:-8vw;
-    opacity:0.3;
-    position:fixed;
-    top:1vh;
-    z-index:0;
-  }
   h1 {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  h1 span {
-    font-style:normal;
-    font-weight: normal;
-    &:before {
-      content: "____";
-      position:relative;
-      font-weight:300;
-      top: -0.5em;
-      right: 0.5em;
-      color:#FFF;
-    }
-    &:after {
-      content: "____";
-      position:relative;
-      font-weight:300;
-      top: -0.5em;
-      left: 0.5em;
-      color:#FFF;
-    }
+}
+#helmet {
+  transform: translateY(42vh) rotate(-15deg);
+  width: 400px;
+  height: auto;
+  right: -8vw;
+  opacity: 0.3;
+  position: fixed;
+  top: 1vh;
+  z-index: 0;
+}
+.emphasize {
+  font-style: normal;
+  font-weight: normal;
+  &:before,
+  &:after {
+    content: "___";
+    position: relative;
+    font-weight: 300;
+    top: -0.5em;
+    color: #FFF;
+  }
+  &:before {
+    right: 0.5em;
+  }
+  &:after {
+    left: 0.5em;
   }
 }

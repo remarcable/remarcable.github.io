@@ -12,31 +12,27 @@
 
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-  <style media="screen">
-    /* Styles for initial loading */
-
-    html {
-      background-color: #333;
-    }
-
-    section {
-      height: 100vh;
-      min-height: 600px;
-      width: 100vw;
-      overflow: hidden;
-      transition: height 0.5s ease-in-out;
-    }
-
-    #coffee {
-      position: relative;
-      z-index: 1;
-      background-color: #333;
-    }
-
-    #helmet {
-      opacity: 0;
-    }
-  </style>
+<style media="screen">
+  /* Styles for initial loading */
+  html {
+    background-color: #333;
+  }
+  section {
+    height: 100vh;
+    min-height: 600px;
+    width: 100vw;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+  }
+  #coffee {
+    position: relative;
+    z-index: 1;
+    background-color: #333;
+  }
+  #helmet {
+    opacity: 0;
+  }
+</style>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/vendor/prefixfree.min.js"></script>
   <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
@@ -47,25 +43,19 @@
     <h6>Ihr Browser ist veraltet!</h6>
     <p>Bitte aktualisieren Sie Ihren Browser, um diese Website korrekt darzustellen. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/de">Den Browser jetzt aktualisieren </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Schließen">&times;</a></p>
-
   </div>
   <section id="coffee">
-    <article>
-      <h3>Ich mag</h3>
-      <h1>Überraschungen.</h1>
-    </article>
+    <h1><small>Ich mag</small>Überraschungen.</h1>
   </section>
   <section id="astronaut">
-    <div class="top">
-      <h1>Sie wollen im <span>Internet</span> gut aussehen?</h1>
-    </div>
-    <img src="img/astronaut.svg" id="helmet" class="no-drag" alt="" />
+    <h1>Sie wollen im <span class="emphasize">Internet</span> gut aussehen?</h1>
+    <img src="img/astronaut.svg" id="helmet" class="no-drag" alt="Symbol eines Astronauten" />
   </section>
   <section id="me">
     <div class="video">
-      <div class="container">
-        <figure><img src="img/marc.png" class="no-drag" id="marc" alt="" /></figure>
-        <p>
+      <div class="align-container no-opacity">
+        <figure class="image-holder"><img src="img/marc.png" class="no-drag" id="picture-marc" alt="Bild von Marc" /></figure>
+        <p id="about-me">
           Ich bin <span>Marc</span>, 17 Jahre alt. Ich gehe auf das Marie-Curie-Gymnasium, schreibe dort für die Schülerzeitung und leite die Veranstaltungstechnik-AG. Ich spiele Klavier und Saxophon und entwickle beeindruckende Internetseiten. Ich möchte
           Astronaut werden und auf meinem Weg solide Erfahrungen sammeln.
         </p>
@@ -73,18 +63,18 @@
     </div>
   </section>
   <section id="goals">
-    <h1>Meine Ziele</h1>
-    <div class="container">
-      <div class="ihnen-helfen column">
-        <img src="img/tree.svg" class="svg no-drag" id="tree" alt="" />
+    <h1 class="headline">Meine Ziele</h1>
+    <div class="align-container">
+      <div class="ihnen-helfen goals-column">
+        <img src="img/tree.svg" class="icon no-drag" id="tree" alt="Symbol eines Baumes" />
         <h2 class="smart-underlined">Ihnen helfen</h2>
         <p>
           Ich möchte Sie bekannter machen. Besonders Jugendlichen ist es immer wichtiger, wie sich ein Unternehmen im Internet präsentiert. Da Ich zu dieser Zielgruppe gehöre, weiß ich worauf es ankommt.
         </p>
       </div>
       <div class="vertical-line"></div>
-      <div class="mir-helfen column">
-        <img src="img/cup.svg" class="svg no-drag" id="cup" alt="" />
+      <div class="mir-helfen goals-column">
+        <img src="img/cup.svg" class="icon no-drag" id="cup" alt="Symbol eines Kaffeebechers" />
         <h2 class="smart-underlined">Mir helfen</h2>
         <p>
           Ich möchte Erfahrung sammeln. Durch den Einsatz neuer Webtechnologien möchte Ich meinen Erfahrungsschatz erweitern und Neues lernen. Außerdem möchte ich mir ein wenig Geld hinzuverdienen.
@@ -93,35 +83,34 @@
     </div>
   </section>
   <section id="references">
-    <h1>Einige Referenzen</h1>
-    <div class="container">
+    <h1 class="headline">Einige Referenzen</h1>
+    <div class="vertical-container"></div>
+    <div class="vertical-container">
+      <figure class="reference-work">
+        <a href="#" target="_blank"><img src="img/wbp.jpg" class="no-drag reference-image" alt="Wer besiegt Paul?">
+          <figcaption class="slide-up"><span class="reference-caption">Wer besiegt Paul?</span>
+            <button class="reference-action">Ansehen!</button>
+          </figcaption>
+        </a>
+      </figure>
+      <figure class="reference-work">
+        <a href="#" target="_blank"><img src="img/druckundschwaerze.jpg" class="no-drag reference-image" alt="Druck und Schwärze">
+          <figcaption class="slide-up"><span class="reference-caption">Druck und Schwärze</span>
+            <button class="reference-action">Ansehen!</button>
+          </figcaption>
+        </a>
+      </figure>
+      <figure class="reference-work">
+        <a href="#" target="_blank"><img src="img/stadtrallye.jpg" class="no-drag reference-image" alt="Stadtrallye">
+          <figcaption class="slide-up"><span class="reference-caption">Stadtrallye</span>
+            <button class="reference-action">Ansehen!</button>
+          </figcaption>
+        </a>
+      </figure>
 
     </div>
-    <div class="container">
-      <a href="#" target="_blank">
-        <figure><img src="img/wbp.jpg" class="no-drag" alt="Wer besiegt Paul?">
-          <figcaption class="action"><span class="caption">Wer besiegt Paul?</span>
-            <button>Ansehen!</button>
-          </figcaption>
-        </figure>
-      </a>
-      <a href="#" target="_blank">
-        <figure><img src="img/druckundschwaerze.jpg" class="no-drag" alt="Druck und Schwärze">
-          <figcaption class="action"><span class="caption">Druck und Schwärze</span>
-            <button>Ansehen!</button>
-          </figcaption>
-        </figure>
-      </a>
-      <a href="#" target="_blank">
-        <figure><img src="img/stadtrallye.jpg" class="no-drag" alt="Stadtrallye">
-          <figcaption class="action"><span class="caption">Stadtrallye</span>
-            <button>Ansehen!</button>
-          </figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class="container">
-      <p>
+    <div class="vertical-container">
+      <p class="do-something-paragraph">
         Haben Sie noch keine Internetseite oder gefällt Ihnen Ihre alte nicht mehr?
         <br> Ich möchte Ihnen helfen, Ihre Vorstellungen und Wünsche umzusetzen.
       </p>

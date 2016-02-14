@@ -6,12 +6,13 @@
 // Reset
 @import "components/normalize";
 
-// components
+// Components
 @import "components/global";
 @import "components/outdated";
 @import "components/sections/sections";
+@import "components/sections/footer";
 
-// individual sections
+// Individual sections
 @import "components/sections/coffee";
 @import "components/sections/astronaut";
 @import "components/sections/goals";

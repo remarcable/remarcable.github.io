@@ -6,114 +6,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  h1 {
-    color: $nice-grey;
-    font-weight: 700;
-    font-size: 3em;
-    margin: 0.92em 0;
-    top: 0;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
-  }
-  a {
-    cursor: default;
-  }
-  // Items
-  .container {
+}
+.vertical-container {
   height: 33.33%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-  figure {
-    // wrapper for image and caption
-    position: relative;
-    width: 305px;
-    height: 230px;
-    margin: 15px;
-    overflow: hidden;
-    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    display: flex;
-    justify-content: center;
-  }
-  img {
-    // image itself
-    display: block;
-    position: relative;
-    height: 100%;
-    width: auto;
-    align-content: center;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .action {
-    // caption + button (wrapper-element)
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    height: 40px;
-    width: 100%;
-    text-align: center;
-    font-family: $secondary-font;
-    // background of caption, animated gradient
-    // @IMPORTANT! Remove on mobile!
-    background: linear-gradient(250deg, #5cdce5, #008cba);
-    background-size: 200% 200%;
-    -webkit-animation: GradientAnimation 10s ease infinite;
-    -moz-animation: GradientAnimation 10s ease infinite;
-    animation: GradientAnimation 10s ease infinite;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-  figure:hover .action {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-  figure:hover img {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  .caption {
-    // text
-    display: block;
-    float: left;
-    margin: 7px 10px;
-    color: #fff;
-    font-size: 1.1rem;
-  }
-  button {
-    // button and it's text
-    display: block;
-    position: relative;
-    float: right;
-    height: 40px;
-    padding: 8px 20px;
-    margin: 0 0 1.25rem;
-    background-color: #FFF;
-    color: $primary-color;
-    font-size: 1rem;
-    text-decoration: none;
-    text-align: center;
-    border-width: 0;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
-    -webkit-transition: background-color 300ms ease-out;
-    transition: background-color 300ms ease-out;
-    cursor: pointer;
-    &:hover {
-      background-color: darken(#fff, 5);
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  p {
+.do-something-paragraph {
   color: $nice-grey;
+  font-family: $primary-font;
   font-style: italic;
   font-weight: 300;
   font-size: 1.25em;
@@ -121,4 +24,77 @@
   margin: 20px;
   text-align: center;
 }
+// Reference-items
+.reference-work {
+  // Wrapper for image and caption
+  position: relative;
+  width: 305px;
+  height: 230px;
+  margin: 15px;
+  overflow: hidden;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  display: flex;
+  justify-content: center;
+  &:hover .slide-up {
+    transform: translateY(0px);
+  }
+  &:hover .reference-image {
+    transform: translateY(-10px);
+  }
+  a {
+    cursor: default;
+  }
+}
+.reference-image {
+  // Image itself
+  transition: all 0.3s;
+}
+.slide-up {
+  // Caption + button (wrapper-element)
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  font-family: $secondary-font;
+  font-weight: 300;
+  // background of caption, animated gradient
+  // @IMPORTANT! Remove on mobile!
+  background: linear-gradient(250deg, #5cdce5, #008cba);
+  background-size: 200% 200%;
+  animation: GradientAnimation 10s ease infinite;
+  transition: all 0.3s;
+  transform: translateY(100%);
+}
+.reference-caption {
+  // Text: "What is this about?"
+  display: block;
+  float: left;
+  margin: 7px 10px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.reference-action {
+  // Button call-to-action
+  float: right;
+  height: 40px;
+  padding: 8px 20px;
+  background-color: #FFF;
+  color: $primary-color;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  border-width: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  transition: background-color 300ms ease-out;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#fff, 5);
+  }
+  &:focus {
+    outline: none;
+  }
 }

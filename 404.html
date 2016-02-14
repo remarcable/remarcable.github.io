@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Page Not Found</title>
+    <title>Marc Nitzsche - Seite nicht gefunden</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
@@ -36,6 +36,16 @@
             margin: 0 auto;
             width: 280px;
         }
+        a {
+          text-decoration: none;
+          color: #008cba;
+        }
+        a:visited {
+          color: #008cba;
+        }
+        a::before, a::after {
+          content: " - "
+        }
 
         @media only screen and (max-width: 280px) {
 
@@ -53,8 +63,10 @@
     </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+    <h1>Die Seite wurde nicht gefunden.</h1>
+    <p>Entschuldigung, aber die Seite diese Seite existiert nicht..</p>
+    <br>
+    <a href="/">zurückkehren</a>
 </body>
 </html>
 <!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

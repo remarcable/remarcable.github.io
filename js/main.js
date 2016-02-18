@@ -10,4 +10,12 @@ $(document).ready(function () {
     resizing: true,
     bgColor: '#333333'
   });
+  $(".typed").typed({
+            strings: ["Kaff^200ee.", "Mu^400sik.", "Inter^200net.", "Überraschung^600en."],
+            typeSpeed: 150,
+            startDelay: 1500,
+            loop: true,
+            loopCount: 10,
+            backDelay: 2000
+        });
 })

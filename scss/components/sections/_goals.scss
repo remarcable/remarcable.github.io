@@ -7,6 +7,12 @@
   text-align: center;
   color: #4C4F4F;
 }
+@media #{$medium-and-down} {
+  #goals {
+    height: auto;
+    flex-direction: column;
+  }
+}
 .vertical-line {
   background-color: $nice-grey;
   /* This drives me crazy: when resizing the browser window the line sometimes doesn't show up. */
@@ -14,6 +20,11 @@
   height: 60vh;
   min-height: 360px;
   margin: 0 65px;
+}
+@media #{$medium-and-down} {
+  .vertical-line {
+    display: none;
+  }
 }
 // Both sections are organized in columns
 .goals-column {
@@ -27,6 +38,11 @@
   p {
     font-family: $secondary-font;
     font-weight: 300;
+  }
+}
+@media #{$medium-and-down} {
+  .mir-helfen {
+    margin-bottom: 2.5em;
   }
 }
 .icon {

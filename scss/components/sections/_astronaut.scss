@@ -3,12 +3,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 300px;
   h1 {
     display: flex;
     flex-direction: column;
     text-align: center;
     z-index: 1;
   }
+}
+@media #{$medium-and-down} {
+    #astronaut {
+      height: auto;
+    }
 }
 #helmet {
   transform: translateY(42vh) rotate(-15deg);
@@ -17,7 +23,7 @@
   right: -8vw;
   opacity: 0.3;
   position: fixed;
-  top: 1vh;
+  top: 2.5vh;
   z-index: 0;
 }
 .emphasize {

@@ -27,6 +27,20 @@ h3 {
   position: absolute;
   left: 50%;
   transform: translate(-50%,0);
+  transition: all 0.3s;
+}
+@media #{$medium-and-down} {
+    .headline {
+      position: relative;
+      align-self: center;
+      left: auto;
+      transform:none;
+    }
+}
+@media #{$small-and-down} {
+    .headline {
+      font-size: 2em;
+    }
 }
 //* Force images and figures with class .no-drag to be not draggable
 .no-drag {
@@ -37,7 +51,13 @@ h3 {
 .align-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   max-width: 75%;
+}
+@media #{$medium-and-down} {
+  .align-container {
+    flex-direction: column;
+  }
 }
 //* Keyfrages for Gradient Animation
 @keyframes GradientAnimation {

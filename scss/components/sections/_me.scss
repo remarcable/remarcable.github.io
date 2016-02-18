@@ -1,9 +1,21 @@
 #me {
   background-color: $nice-grey;
   position: relative;
+  transition: all 0.3s;
+}
+@media #{$medium-and-down} {
+  #me {
+    height: auto;
+  }
 }
 .image-holder {
   margin: 0 40px 0 0;
+  transition: all 0.3s;
+}
+@media #{$medium-and-down} {
+  .image-holder {
+    margin: 40px;
+  }
 }
 #picture-marc {
   width: 200px;
@@ -18,10 +30,16 @@
   font-weight: 300;
   font-size: 1.3em;
   color: #FFF;
+  transition: all 0.3s;
   span {
     font-family: $primary-font;
     font-style: italic;
     font-weight: 700;
+  }
+}
+@media #{$medium-and-down} {
+  #about-me {
+    text-align: center;
   }
 }
 .video {

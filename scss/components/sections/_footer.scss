@@ -25,3 +25,8 @@ footer {
     }
   }
 }
+@media #{$small-and-down} {
+  footer {
+    animation: none;
+  }
+}

@@ -4,9 +4,12 @@
   background-image: url(".././img/optimized/coffee-mask.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50%;
+  min-height: 300px;
   h1 {
     margin-left: 5%;
     font-size: 5em;
+    transition: all 0.3s;
     small {
       display: block;
       font-size: 0.6em;
@@ -14,4 +17,18 @@
       line-height: normal;
     }
   }
+}
+@media #{$medium-and-down} {
+    #coffee {
+      height: auto;
+      & h1 {
+        font-size: 4em;
+      }
+    }
+}
+@media #{$small-and-down} {
+    #coffee h1 {
+    font-size: 2.5em;
+    margin: 0 auto;
+    }
 }

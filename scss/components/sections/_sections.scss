@@ -1,7 +1,12 @@
 section {
-  height: 100vh; // Don't forget min-height! // Different sizing-method on mobile! just use 800px or less as hight to ship around viewport-problem!
+  height: 100vh;
   min-height: 600px;
   width: 100vw;
   overflow: hidden;
   transition: height 0.5s ease-in-out;
+}
+@media #{$medium-and-down} {
+  section {
+    height: 600px;
+  }
 }

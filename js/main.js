@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
   $('.video').vide('img/whiteboard/White-Board', {
     posterType: 'jpg',
-    resizing: false,
+    resizing: true,
     bgColor: '#333333'
   });
 })

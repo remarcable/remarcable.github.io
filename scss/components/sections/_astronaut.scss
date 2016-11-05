@@ -17,13 +17,13 @@
     }
 }
 #helmet {
-  transform: translateY(42vh) rotate(-15deg);
+  transform: rotate(-15deg);
   width: 400px;
   height: auto;
   right: -8vw;
   opacity: 0.3;
   position: fixed;
-  top: 2.5vh;
+  bottom: -1em;
   z-index: 0;
 }
 .emphasize {

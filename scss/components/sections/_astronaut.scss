@@ -1,21 +1,25 @@
 #astronaut {
+  position: relative;
+  z-index: -1;
   background-color: $primary-color;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 300px;
+
   h1 {
     display: flex;
     flex-direction: column;
     text-align: center;
-    z-index: 1;
   }
 }
+
 @media #{$medium-and-down} {
     #astronaut {
       height: auto;
     }
 }
+
 #helmet {
   transform: rotate(-15deg);
   width: 400px;
@@ -23,12 +27,13 @@
   right: -8vw;
   opacity: 0.3;
   position: fixed;
-  bottom: -1em;
-  z-index: 0;
+  bottom: -2em;
 }
+
 .emphasize {
   font-style: normal;
   font-weight: normal;
+
   &:before,
   &:after {
     content: "___";
@@ -37,10 +42,13 @@
     top: -0.5em;
     color: #FFF;
   }
+
   &:before {
     right: 0.5em;
   }
+
   &:after {
     left: 0.5em;
   }
+
 }

@@ -11,7 +11,7 @@ $(document).ready(function () {
     bgColor: '#333333'
   });
   $(".typed").typed({
-            strings: ["Kaff^200ee.", "Mu^400sik.", "Inter^200net.", "Überraschung^600en."],
+            strings: ["Coff^200ee.", "Mu^400sic.", "Inter^200net.", "Surpri^600ses.", "Cod^300ing.", "Hum^100ans."],
             typeSpeed: 150,
             startDelay: 1500,
             loop: true,

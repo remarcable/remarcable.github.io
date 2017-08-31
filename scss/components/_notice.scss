@@ -1,0 +1,47 @@
+.notice {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #448AFF;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+
+  .text {
+    max-width: 95%;
+    margin: 5px 0;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:visited {
+    color: #fff;
+  }
+
+  button {
+    padding: 5px 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    transform: scale(.85);
+    user-select: none;
+    background-color: transparent;
+  }
+
+  button:focus {
+    outline: 0;
+  }
+}
+
+@media #{$medium-and-down} {
+    .notice {
+      flex-direction: column;
+    }
+}

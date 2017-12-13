@@ -25,6 +25,8 @@ footer {
   }
 
   .pgp-key {
+    font-family: $secondary-font;
+    text-transform: uppercase;
     position: absolute;
     bottom: 50px;
     transform: translateY(50%);

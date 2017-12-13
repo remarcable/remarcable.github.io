@@ -17,6 +17,31 @@
       line-height: normal;
     }
   }
+
+  nav {
+    font-family: $secondary-font;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    a {
+      color: rgba(255, 255, 255, .8);
+      text-decoration: none;
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      li {
+        display: block;
+        margin: 0 10px;
+      }
+    }
+  }
 }
 @media #{$medium-and-down} {
     #coffee {

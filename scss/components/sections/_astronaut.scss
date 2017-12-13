@@ -1,7 +1,7 @@
 #astronaut {
   position: relative;
-  z-index: -1;
-  background-color: $primary-color;
+  z-index: 0;
+  background-image: linear-gradient(to top, #1d396b 0%, #1e3c72 1%, #2e5fb6 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,9 @@
     #astronaut {
       height: auto;
     }
+    #helmet {
+      display: none;
+    }
 }
 
 #helmet {
@@ -25,10 +28,11 @@
   width: 400px;
   height: auto;
   right: -8vw;
-  opacity: 0.3;
   position: fixed;
   bottom: -2em;
-  z-index: -1;
+  opacity: 1;
+  z-index: 0;
+  fill: white;
 }
 
 .emphasize {

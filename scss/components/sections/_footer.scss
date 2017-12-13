@@ -23,6 +23,15 @@ footer {
       outline: none;
     }
   }
+
+  .pgp-key {
+    position: absolute;
+    bottom: 50px;
+    transform: translateY(50%);
+    right: 20px;
+    color: rgba(0, 0, 0, .4);
+    font-size: .75em;
+  }
 }
 @media #{$small-and-down} {
   footer {

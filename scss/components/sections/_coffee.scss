@@ -63,6 +63,8 @@
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    transform: translateX(-10%);
+    display: inline-block;
 }
 @keyframes blink{
     0% { opacity:1; }

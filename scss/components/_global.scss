@@ -45,6 +45,7 @@ h3 {
 //* Force images and figures with class .no-drag to be not draggable
 .no-drag {
   user-drag: none;
+  -webkit-user-drag: none;
   user-select: none;
 }
 // Container used in goals and me

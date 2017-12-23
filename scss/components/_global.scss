@@ -59,19 +59,7 @@ h3 {
     flex-direction: column;
   }
 }
-//* Keyfrages for Gradient Animation
 
-// @keyframes GradientAnimation {
-//   0% {
-//     background-position: 0 50%;
-//   }
-//   50% {
-//     background-position: 100% 50%;
-//   }
-//   100% {
-//     background-position: 0 50%;
-//   }
-// }
 // Bounce to top hover-effect
 .hvr-bounce-to-top {
   position: relative;
@@ -99,7 +87,6 @@ h3 {
 .hvr-bounce-to-top:focus,
 .hvr-bounce-to-top:active {
   color: white;
-  transform: scale(1.2);
 }
 .hvr-bounce-to-top:hover:before,
 .hvr-bounce-to-top:focus:before,

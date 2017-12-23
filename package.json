@@ -4,6 +4,7 @@
   "description": "Private webpage of Marc Nitzsche (marcnitzsche.de / lightningboss.github.io)",
   "main": "index.js",
   "scripts": {
+    "start": "npm run watch:all",
     "clean": "rm -f css/*",
     "autoprefixer": "postcss -u autoprefixer -r css/*",
     "scss": "node-sass --output-style compressed -o css scss",

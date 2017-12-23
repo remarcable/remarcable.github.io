@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Marc -- creator -- @holzkopf4
+    Marc -- creator -- github.com/lightningboss
 
 # THANKS
 
@@ -11,6 +11,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
-    Atom, JavaScript
+    CSS3, HTML5, JS

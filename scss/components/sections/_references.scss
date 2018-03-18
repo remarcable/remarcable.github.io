@@ -63,6 +63,7 @@
   // Image itself
   transition: all 0.3s;
   width: 320px;
+  filter: blur(0);
 }
 .slide-up {
   // Caption + button (wrapper-element)

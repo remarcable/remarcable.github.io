@@ -20,7 +20,11 @@
   <style media="screen">
     /* Styles for initial loading */
     html {
-      background-color: #333;
+      background-color: #000;
+    }
+    body {
+      top: 0;
+      margin: 0;
     }
     section {
       height: 100vh;
@@ -29,10 +33,18 @@
       overflow: hidden;
       transition: height 0.5s ease-in-out;
     }
-    #head {
+
+    .scroll-content {
+      display: none;
+    }
+
+    #head, #me {
       position: relative;
       z-index: 1;
-      background-color: #333;
+      background-color: #9EC3E7;
+    }
+    #astronaut {
+      background-image: linear-gradient(to top, #2b5fbb 0%, #0a224c 100%);
     }
     #helmet {
       opacity: 0;
@@ -43,6 +55,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="overscroll-content">
+    <span>Scroll down to learn more about me! :)</span>
+  </div>
   <section id="head" class="no-drag">
     <nav>
       <ul>
@@ -59,7 +74,7 @@
     <h1>
       <small>I am</small>
       <span>
-        <span class="typewrite" data-period="2000" data-type='[ "Wannabe-Astronaut", "Creator", "Developer", "Student", "Designer", "Musician", "Traveler" ]'>
+        <span class="typewrite" data-period="2000" data-type='[ "Wannabe-Astronaut", "Creator", "Developer", "Student", "Vegan", "Musician", "Traveler" ]'>
           <span class="wrap"></span>
         </span>
         <span class="typed-cursor">|</span>
@@ -131,6 +146,10 @@
     </a>
     <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x350E90D6E8C90241" class="pgp-key">GnuPG-Key E8C90241</a>
   </footer>
+
+  <div class="overscroll-content bottom">
+    <span>Just click on the button to send me an email. :)</span>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

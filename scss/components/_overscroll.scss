@@ -1,0 +1,25 @@
+.overscroll-content {
+  display: block;
+  height: 100px;
+  width: 100%;
+  padding: 15px;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 500;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: #448AFF;
+  background: linear-gradient(0deg, #448AFF, #000);
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+
+  &.bottom {
+    top: auto;
+    bottom: -100px;
+    align-items: flex-start;
+    background: linear-gradient(180deg, #448AFF, #000);
+  }
+}

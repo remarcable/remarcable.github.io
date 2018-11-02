@@ -1,6 +1,7 @@
 #head {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url("/img/dist/beautiful-view.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,6 +12,7 @@
     text-shadow: rgba(0,0,0,.5) 10px 10px 25px;
     font-size: 5em;
     transition: all 0.3s;
+
     small {
       display: block;
       font-size: 0.6em;
@@ -53,9 +55,14 @@
     }
 }
 @media #{$small-and-down} {
+    #head {
+      text-align: center;
+      justify-content: flex-end;
+    }
     #head h1 {
-    font-size: 2.5em;
-    margin: 0 auto;
+      font-size: 2.5em;
+      margin: 0 auto;
+      margin-bottom: 5%;
     }
 }
 .typed-cursor{

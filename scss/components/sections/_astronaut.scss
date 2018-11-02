@@ -12,6 +12,10 @@
     flex-direction: column;
     text-align: center;
   }
+
+  small {
+    font-style: normal;
+  }
 }
 
 @media #{$medium-and-down} {
@@ -29,32 +33,9 @@
   height: auto;
   right: -8vw;
   position: fixed;
-  bottom: -2em;
+  bottom: -2.5em;
   opacity: 1;
   z-index: 0;
   fill: white;
   filter: drop-shadow( -5px -5px 25px rgba(0,0,0,.2));
-}
-
-.emphasize {
-  font-style: normal;
-  font-weight: normal;
-
-  &:before,
-  &:after {
-    content: "___";
-    position: relative;
-    font-weight: 300;
-    top: -0.5em;
-    color: #FFF;
-  }
-
-  &:before {
-    right: 0.5em;
-  }
-
-  &:after {
-    left: 0.5em;
-  }
-
 }

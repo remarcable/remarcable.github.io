@@ -14,7 +14,7 @@
     "build:js": "",
     "build:all": "npm run build:css && npm run build:js",
     "watch:css": "onchange 'scss/**/*' -- npm run build:css",
-    "watch:js": "onchange 'js/src/**/*.js' -- npm run build:js",
+    "watch:js": "onchange 'js/**/*.js' -- npm run build:js",
     "watch:all": "npm-run-all -p serve watch:css watch:js"
   },
   "repository": {

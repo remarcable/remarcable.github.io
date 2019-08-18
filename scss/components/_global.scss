@@ -26,21 +26,21 @@ h3 {
   top: 0;
   position: absolute;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   transition: all 0.3s;
 }
 @media #{$medium-and-down} {
-    .headline {
-      position: relative;
-      align-self: center;
-      left: auto;
-      transform:none;
-    }
+  .headline {
+    position: relative;
+    align-self: center;
+    left: auto;
+    transform: none;
+  }
 }
 @media #{$small-and-down} {
-    .headline {
-      font-size: 2em;
-    }
+  .headline {
+    font-size: 2em;
+  }
 }
 //* Force images and figures with class .no-drag to be not draggable
 .no-drag {
@@ -93,5 +93,5 @@ h3 {
 .hvr-bounce-to-top:focus:before,
 .hvr-bounce-to-top:active:before {
   transform: scaleY(1);
-  transition-timing-function: cubic-bezier(.55,0,.1,1);
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
 }

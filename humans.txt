@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Marc -- creator -- github.com/lightningboss
+    Marc -- creator -- github.com/remarcable
 
 # THANKS
 

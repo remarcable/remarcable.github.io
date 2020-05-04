@@ -1,7 +1,7 @@
 {
-  "name": "lightningboss.github.io",
+  "name": "remarcable.github.io",
   "version": "0.0.1",
-  "description": "Private webpage of Marc Nitzsche (marcnitzsche.de / lightningboss.github.io)",
+  "description": "Private webpage of Marc Nitzsche (marcnitzsche.de / remarcable.github.io)",
   "main": "index.js",
   "scripts": {
     "start": "npm run watch:all",
@@ -19,13 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lightningboss/lightningboss.github.io.git"
+    "url": "git+https://github.com/remarcable/remarcable.github.io.git"
   },
   "author": "Marc Nitzsche",
   "bugs": {
-    "url": "https://github.com/lightningboss/lightningboss.github.io/issues"
+    "url": "https://github.com/remarcable/remarcable.github.io/issues"
   },
-  "homepage": "https://github.com/lightningboss/lightningboss.github.io#readme",
+  "homepage": "https://github.com/remarcable/remarcable.github.io#readme",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",

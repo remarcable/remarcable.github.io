@@ -1,6 +1,6 @@
 @import "styles/variables.scss";
 
-#astronaut {
+.astronaut {
   position: relative;
   z-index: 0;
   background-image: linear-gradient(to top, #2b5fbb 0%, #0a224c 100%);
@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   min-height: 300px;
+
+  @media #{$medium-and-down} {
+    height: auto;
+  }
 
   h1 {
     display: flex;
@@ -20,16 +24,7 @@
   }
 }
 
-@media #{$medium-and-down} {
-  #astronaut {
-    height: auto;
-  }
-  #helmet {
-    display: none;
-  }
-}
-
-#helmet {
+.helmet {
   transform: rotate(-15deg);
   width: 400px;
   height: auto;
@@ -40,4 +35,26 @@
   z-index: 0;
   fill: white;
   filter: drop-shadow(-5px -5px 25px rgba(0, 0, 0, 0.2));
+
+  @media #{$medium-and-down} {
+    display: none;
+  }
+}
+
+.typedCursor {
+  opacity: 1;
+  animation: blink 0.7s infinite;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

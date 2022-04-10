@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 import styles from "./HeroSection.module.scss";
 
 const navItems = [
@@ -8,7 +6,7 @@ const navItems = [
 ];
 
 const HeroSection = () => (
-  <section className={clsx(styles.hero, "no-drag")}>
+  <section className={styles.hero} draggable={false}>
     <Navigation />
 
     <h1>

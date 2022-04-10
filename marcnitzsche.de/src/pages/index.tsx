@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import PageHead from "components/PageHead";
 import HeroSection from "components/HeroSection";
 import AstronautSection from "components/AstronautSection";
+import IntroductionSection from "components/IntroductionSection";
 
 const Home: NextPage = () => {
   return (
@@ -10,34 +11,7 @@ const Home: NextPage = () => {
       <PageHead />
       <HeroSection />
       <AstronautSection />
-      <section id="me">
-        <div className="video">
-          <div className="content">
-            <div className="align-container">
-              <figure className="image-holder">
-                <img
-                  src="img/dist/marc.jpg"
-                  className="no-drag"
-                  id="picture-marc"
-                  alt="Marc smiling in the camera"
-                />
-              </figure>
-              <p id="about-me">
-                I am <span>Marc</span>, a developer and musician from Berlin.
-                While not developing impressive webpages or side projects I'm
-                singing and playing the piano. Although I'm currently studying
-                music and computer science, I am going to become an Astronaut.
-                I'm curious where my path will take me!
-              </p>
-            </div>
-          </div>
-          <video autoPlay muted loop poster="img/dist/White-Board.jpg">
-            <source src="img/video/White-Board.webm" type="video/webm" />
-            <source src="img/video/White-Board.ogv" type="video/ogg" />
-            <source src="img/video/White-Board.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+      <IntroductionSection />
       <section id="references" className="no-drag">
         <h1 className="headline">Projects</h1>
         <div className="vertical-container"></div>

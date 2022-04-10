@@ -66,41 +66,6 @@ h3 {
   }
 }
 
-// Bounce to top hover-effect
-.hvr-bounce-to-top {
-  position: relative;
-  transform: translateZ(0);
-  transition-property: color, transform;
-  transition-duration: 0.5s;
-  -moz-osx-font-smoothing: grayscale;
-}
-.hvr-bounce-to-top:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $primary-color;
-  transform: scaleY(0);
-  transform-origin: 50% 100%;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-}
-.hvr-bounce-to-top:hover,
-.hvr-bounce-to-top:focus,
-.hvr-bounce-to-top:active {
-  color: white;
-}
-.hvr-bounce-to-top:hover:before,
-.hvr-bounce-to-top:focus:before,
-.hvr-bounce-to-top:active:before {
-  transform: scaleY(1);
-  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-}
-
 section {
   height: 100vh;
   min-height: 600px;

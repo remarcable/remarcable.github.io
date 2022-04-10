@@ -1,0 +1,83 @@
+@import "styles/variables.scss";
+
+.footer {
+  background: linear-gradient(250deg, #2b5fbb, #0a224c);
+  background-size: 400% 400%;
+  height: 100px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$small-and-down} {
+    animation: none;
+  }
+
+  button {
+    background: #ffffff;
+    border: 0 solid #4c4f4f;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2),
+      0 8px 17px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px 40px;
+    font-family: Merriweather;
+    font-weight: 300;
+    font-style: italic;
+    color: #4c4f4f;
+    line-height: 16px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .pgpKey {
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 50px;
+    transform: translateY(50%);
+    right: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75em;
+  }
+}
+
+// Bounce to top hover-effect
+.bounceToTop {
+  position: relative;
+  transform: translateZ(0);
+  transition-property: color, transform;
+  transition-duration: 0.5s;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $primary-color;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    transform: scale(1.1);
+  }
+  &:hover::before,
+  &:focus::before,
+  &:active::before {
+    transform: scaleY(1);
+    transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  }
+}

@@ -4,7 +4,6 @@ import "normalize.css";
 import "styles/global.scss";
 
 // Temporary global imports:
-import "styles/sections/_footer.scss";
 import "styles/sections/_sections.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {

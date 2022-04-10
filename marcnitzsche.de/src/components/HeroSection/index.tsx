@@ -25,6 +25,7 @@ const HeroSection = () => (
 
     <Image
       src={backgroundImage}
+      priority
       layout="fill"
       sizes="100vw"
       className={styles.backgroundImage}

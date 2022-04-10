@@ -1,14 +1,15 @@
 import Image from "next/image";
 import clsx from "clsx";
-
-import styles from "./IntroductionSection.module.scss";
-import marcImage from "./marc.jpg";
+import LazilyRender from "react-lazily-render";
 
 import containerStyles from "styles/containers.module.scss";
+import styles from "./IntroductionSection.module.scss";
+
+import marcImage from "./marc.jpg";
 
 const IntroductionSection = () => (
   <section className={clsx(containerStyles.section, styles.introduction)}>
-    <div className={styles.video}>
+    <div className={styles.withVideoBackground}>
       <div className={styles.content}>
         <div className={containerStyles.alignContainer}>
           <figure className={styles.imageHolder}>
@@ -30,13 +31,22 @@ const IntroductionSection = () => (
           </p>
         </div>
       </div>
-      <video autoPlay muted loop poster="img/dist/White-Board.jpg">
-        <source src="video/White-Board.webm" type="video/webm" />
-        <source src="video/White-Board.ogv" type="video/ogg" />
-        <source src="video/White-Board.mp4" type="video/mp4" />
-      </video>
+
+      <LazilyRender
+        offset={{ top: 1000 }}
+        onRender={() => console.log("rendered")}
+        content={<Video />}
+      />
     </div>
   </section>
+);
+
+const Video = () => (
+  <video autoPlay muted loop>
+    <source src="video/White-Board.webm" type="video/webm" />
+    <source src="video/White-Board.ogv" type="video/ogg" />
+    <source src="video/White-Board.mp4" type="video/mp4" />
+  </video>
 );
 
 export default IntroductionSection;

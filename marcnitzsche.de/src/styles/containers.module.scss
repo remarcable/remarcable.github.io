@@ -1,0 +1,24 @@
+@import "styles/variables.scss";
+
+.alignContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 75%;
+
+  @media #{$medium-and-down} {
+    flex-direction: column;
+  }
+}
+
+.section {
+  height: 100vh;
+  min-height: 600px;
+  width: 100vw;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+
+  @media #{$medium-and-down} {
+    height: 600px;
+  }
+}

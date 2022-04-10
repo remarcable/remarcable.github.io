@@ -1,12 +1,16 @@
 import Image from "next/image";
+import clsx from "clsx";
+
 import styles from "./IntroductionSection.module.scss";
 import marcImage from "./marc.jpg";
 
+import containerStyles from "styles/containers.module.scss";
+
 const IntroductionSection = () => (
-  <section className={styles.introduction}>
+  <section className={clsx(containerStyles.section, styles.introduction)}>
     <div className={styles.video}>
       <div className={styles.content}>
-        <div className="align-container">
+        <div className={containerStyles.alignContainer}>
           <figure className={styles.imageHolder}>
             <Image
               src={marcImage}

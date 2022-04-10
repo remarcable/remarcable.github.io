@@ -1,4 +1,8 @@
+import clsx from "clsx";
+
 import styles from "./HeroSection.module.scss";
+import textStyles from "styles/text.module.scss";
+import containerStyles from "styles/containers.module.scss";
 
 const navItems = [
   { title: "Blog", url: "https://blog.marcnitzsche.de" },
@@ -6,10 +10,13 @@ const navItems = [
 ];
 
 const HeroSection = () => (
-  <section className={styles.hero} draggable={false}>
+  <section
+    className={clsx(containerStyles.section, styles.hero)}
+    draggable={false}
+  >
     <Navigation />
 
-    <h1>
+    <h1 className={textStyles.H1}>
       <small>Hey,</small> I&apos;m Marc
     </h1>
   </section>

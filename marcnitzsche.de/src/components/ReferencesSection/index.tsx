@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import clsx from "clsx";
 
 import blogImage from "./images/blog.jpg";
 import clickTheNumberImage from "./images/clickthenumber.png";
@@ -6,6 +7,8 @@ import druckUndSchwaerzeImage from "./images/druckundschwaerze.png";
 import livegameImage from "./images/livegame.png";
 
 import styles from "./ReferencesSection.module.scss";
+import textStyles from "styles/text.module.scss";
+import containerStyles from "styles/containers.module.scss";
 
 const references = [
   {
@@ -35,8 +38,8 @@ const references = [
 ];
 
 const ReferencesSection = () => (
-  <section className={styles.references}>
-    <h1 className="headline">Projects</h1>
+  <section className={clsx(containerStyles.section, styles.references)}>
+    <h1 className={clsx(textStyles.H1, textStyles.headline)}>Projects</h1>
     <div className={styles.verticalContainer}></div>
     <div className={styles.verticalContainer}>
       {references.map((reference) => (

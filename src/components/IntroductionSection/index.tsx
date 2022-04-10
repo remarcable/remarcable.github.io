@@ -12,7 +12,7 @@ const IntroductionSection = () => (
     <div className={styles.withVideoBackground}>
       <div className={styles.content}>
         <div className={containerStyles.alignContainer}>
-          <figure className={styles.imageHolder}>
+          <figure className={styles.imageWrapper}>
             <Image
               src={marcImage}
               width={200}

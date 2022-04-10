@@ -18,7 +18,7 @@ const references = [
     caption: "Personal Blog",
   },
   {
-    url: "https://marcnitzsche.de/ClickTheNumber",
+    url: "https://projects.marcnitzsche.de/ClickTheNumber",
     image: clickTheNumberImage,
     altText: "Click The Number",
     caption: "Reaction Game",
@@ -75,7 +75,7 @@ const Reference: React.FC<{
       <figcaption className={styles.slideUp}>
         <span className={styles.referenceCaption}>{caption}</span>
       </figcaption>
-      <button className={styles.referenceAction}>Take a look!</button>
+      <button className={styles.referenceAction}>Visit Now</button>
     </a>
   </figure>
 );

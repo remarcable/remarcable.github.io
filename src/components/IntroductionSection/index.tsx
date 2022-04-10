@@ -24,20 +24,16 @@ const IntroductionSection = () => (
             />
           </figure>
           <p className={styles.aboutMe}>
-            I am <span>Marc</span>, a developer and musician from Berlin. While
-            not developing impressive webpages or side projects I&apos;m singing
-            and playing the piano. Although I&apos;m currently studying music
-            and computer science, I am going to become an Astronaut. I&apos;m
-            curious where my path will take me!
+            Hello there 👋, I am <em>Marc</em>, a young developer and musician
+            from Berlin. While not tinkering with one of my many side projects,
+            you can find me singing, playing the piano, or learning to play the
+            trumpet. I recently finished studying music and computer science at
+            the Berlin University of the Arts and the Humboldt University.
           </p>
         </div>
       </div>
 
-      <LazilyRender
-        offset={{ top: 1000 }}
-        onRender={() => console.log("rendered")}
-        content={<Video />}
-      />
+      <LazilyRender offset={1000} content={<Video />} />
     </div>
   </section>
 );

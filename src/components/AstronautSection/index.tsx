@@ -10,13 +10,11 @@ const AstronautSection = () => {
     // XXX: It seems like `useTypewriter` relies on words to be
     // recreated on each render (therefore can't put it outside for now)
     words: [
-      "Wannabe-Astronaut",
-      "Creator",
-      "Developer",
-      "Student",
-      "Vegan",
-      "Musician",
-      "Traveler",
+      "a Creator",
+      "a Developer",
+      "a Musician",
+      "a Student",
+      "a Traveler",
     ],
     loop: false, // XXX: this means looping is turned on
     typeSpeed: 150,

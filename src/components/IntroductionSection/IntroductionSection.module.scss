@@ -30,18 +30,19 @@
   max-width: 600px;
   font-family: $secondary-font;
   font-weight: 300;
-  line-height: 1.35;
-  font-size: 1.3em;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  font-size: 22px;
   color: #fff;
 
-  span {
+  em {
     font-family: $primary-font;
     font-style: italic;
     font-weight: 700;
   }
 
   @media #{$medium-and-down} {
-    text-align: center;
+    margin-bottom: 40px;
   }
 }
 

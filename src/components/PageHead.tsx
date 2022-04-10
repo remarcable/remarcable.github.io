@@ -5,9 +5,8 @@ const GOOGLE_SITE_VERIFICATION =
 const ROOT_URL = process.env.NEXT_PUBLIC_ROOT_URL;
 
 const page = {
-  title: "Marc Nitzsche - He's unreal.",
-  description:
-    "Marc Nitzsche is a great person from the Internet (Germany). He creates webpages, games and loves programming.",
+  title: "Marc Nitzsche",
+  description: "Marc Nitzsche creates software, games and music.",
   themeColor: "#103981",
 };
 

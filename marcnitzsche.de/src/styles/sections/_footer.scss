@@ -1,3 +1,5 @@
+@import "styles/variables.scss";
+
 footer {
   background: linear-gradient(250deg, #2b5fbb, #0a224c);
   background-size: 400% 400%;
@@ -8,14 +10,15 @@ footer {
   justify-content: center;
   align-items: center;
   button {
-    background: #FFFFFF;
-    border: 0 solid #4C4F4F;
-    box-shadow: 0 6px 20px 0 rgba(0,0,0,0.20), 0 8px 17px 0 rgba(0,0,0,0.19);
+    background: #ffffff;
+    border: 0 solid #4c4f4f;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2),
+      0 8px 17px 0 rgba(0, 0, 0, 0.19);
     padding: 15px 40px;
     font-family: Merriweather;
     font-weight: 300;
     font-style: italic;
-    color: #4C4F4F;
+    color: #4c4f4f;
     line-height: 16px;
     overflow: hidden;
     &:focus {
@@ -30,8 +33,8 @@ footer {
     bottom: 50px;
     transform: translateY(50%);
     right: 20px;
-    color: rgba(255, 255, 255, .8);
-    font-size: .75em;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75em;
   }
 }
 @media #{$small-and-down} {

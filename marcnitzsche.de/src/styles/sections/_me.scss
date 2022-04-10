@@ -1,3 +1,5 @@
+@import "styles/variables.scss";
+
 #me {
   background-color: $nice-grey;
   position: relative;
@@ -23,7 +25,8 @@
   height: 200px;
   overflow: hidden;
   border-radius: 100%;
-  box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22);
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2),
+    0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 #about-me {
   max-width: 600px;
@@ -31,7 +34,7 @@
   font-weight: 300;
   line-height: 1.35;
   font-size: 1.3em;
-  color: #FFF;
+  color: #fff;
   transition: all 0.3s;
   span {
     font-family: $primary-font;
@@ -69,5 +72,5 @@
 }
 
 video::-webkit-media-controls {
-   display:none !important;
- }
+  display: none !important;
+}

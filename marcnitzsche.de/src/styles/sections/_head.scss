@@ -1,3 +1,5 @@
+@import "styles/variables.scss";
+
 #head {
   display: flex;
   justify-content: center;
@@ -9,7 +11,7 @@
   min-height: 300px;
   h1 {
     margin-left: 5%;
-    text-shadow: rgba(0,0,0,.5) 10px 10px 25px;
+    text-shadow: rgba(0, 0, 0, 0.5) 10px 10px 25px;
     font-size: 5em;
     transition: all 0.3s;
 
@@ -29,7 +31,7 @@
     right: 0;
     margin: 20px;
     a {
-      color: rgba(255, 255, 255, .8);
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       &:hover {
         color: rgba(255, 255, 255, 1);
@@ -47,44 +49,62 @@
   }
 }
 @media #{$medium-and-down} {
-    #head {
-      height: auto;
-      & h1 {
-        font-size: 4em;
-      }
+  #head {
+    height: auto;
+    & h1 {
+      font-size: 4em;
     }
+  }
 }
 @media #{$small-and-down} {
-    #head {
-      text-align: center;
-      justify-content: flex-end;
-    }
-    #head h1 {
-      font-size: 2.5em;
-      margin: 0 auto;
-      margin-bottom: 5%;
-    }
+  #head {
+    text-align: center;
+    justify-content: flex-end;
+  }
+  #head h1 {
+    font-size: 2.5em;
+    margin: 0 auto;
+    margin-bottom: 5%;
+  }
 }
-.typed-cursor{
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+  transform: translateX(-10%);
+  display: inline-block;
+}
+@keyframes blink {
+  0% {
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-    transform: translateX(-10%);
-    display: inline-block;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

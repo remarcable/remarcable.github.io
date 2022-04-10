@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       #me {
         position: relative;
         z-index: 1;
-        background-color: #9ec3e7;
+        background-color: #333;
       }
       #astronaut {
         background-image: linear-gradient(to top, #2b5fbb 0%, #0a224c 100%);
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          <video autoplay muted loop poster="img/dist/White-Board.jpg">
+          <video autoPlay muted loop poster="img/dist/White-Board.jpg">
             <source src="img/video/White-Board.webm" type="video/webm" />
             <source src="img/video/White-Board.ogv" type="video/ogg" />
             <source src="img/video/White-Board.mp4" type="video/mp4" />

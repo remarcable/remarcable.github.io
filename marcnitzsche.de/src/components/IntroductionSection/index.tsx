@@ -19,6 +19,7 @@ const IntroductionSection = () => (
               height={200}
               className={styles.image}
               alt="Marc smiling in the camera"
+              placeholder="blur"
               draggable={false}
             />
           </figure>

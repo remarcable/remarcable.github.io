@@ -68,6 +68,7 @@ const Reference: React.FC<{
         sizes="25vw"
         layout="fill"
         className={styles.referenceImage}
+        placeholder="blur"
         alt={altText}
         draggable={false}
       />

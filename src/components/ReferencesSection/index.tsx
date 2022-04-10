@@ -48,8 +48,8 @@ const ReferencesSection = () => (
     </div>
     <div className={styles.verticalContainer}>
       <p className={styles.doSomethingParagraph}>
-        Write me, if you'd like to get in touch. <br />
-        It's going to be grand.
+        Write me, if you&apos;d like to get in touch. <br />
+        It&apos;s going to be grand.
       </p>
     </div>
   </section>

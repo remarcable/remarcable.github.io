@@ -25,10 +25,10 @@ const IntroductionSection = () => (
           </figure>
           <p className={styles.aboutMe}>
             I am <span>Marc</span>, a developer and musician from Berlin. While
-            not developing impressive webpages or side projects I'm singing and
-            playing the piano. Although I'm currently studying music and
-            computer science, I am going to become an Astronaut. I'm curious
-            where my path will take me!
+            not developing impressive webpages or side projects I&apos;m singing
+            and playing the piano. Although I&apos;m currently studying music
+            and computer science, I am going to become an Astronaut. I&apos;m
+            curious where my path will take me!
           </p>
         </div>
       </div>

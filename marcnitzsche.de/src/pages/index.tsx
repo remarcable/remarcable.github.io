@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import PageHead from "components/PageHead";
+import HeroSection from "components/HeroSection";
 
 const Home: NextPage = () => {
   return (
@@ -40,22 +41,7 @@ const Home: NextPage = () => {
         opacity: 0;
       }
     `}</style>
-      <section id="head" className="no-drag">
-        <nav>
-          <ul>
-            <li>
-              <a href="https://blog.marcnitzsche.de">Blog</a>
-            </li>
-            <li>
-              <a href="https://github.com/remarcable">Github</a>
-            </li>
-          </ul>
-        </nav>
-        <h1>
-          <small>Hey,</small>
-          I'm Marc
-        </h1>
-      </section>
+      <HeroSection />
       <section id="astronaut" className="no-drag">
         <h1>
           <small>I am</small>

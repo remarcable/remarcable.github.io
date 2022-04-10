@@ -53,6 +53,7 @@
 .navigation {
   font-family: $secondary-font;
   position: absolute;
+  z-index: 100;
   text-transform: uppercase;
   top: 0;
   right: 0;

@@ -14,13 +14,13 @@ const references = [
   {
     url: "https://blog.marcnitzsche.de",
     image: blogImage,
-    altText: "Marc's Blog!",
+    altText: "Marc's Blog",
     caption: "Personal Blog",
   },
   {
     url: "https://marcnitzsche.de/ClickTheNumber",
     image: clickTheNumberImage,
-    altText: "Click The Number!",
+    altText: "Click The Number",
     caption: "Reaction Game",
   },
   {
@@ -48,8 +48,8 @@ const ReferencesSection = () => (
     </div>
     <div className={styles.verticalContainer}>
       <p className={styles.doSomethingParagraph}>
-        Write me, if you&apos;d like to get in touch. <br />
-        It&apos;s going to be grand.
+        Feel free to contact me using my email below. <br />
+        It&apos;m looking forward to it!
       </p>
     </div>
   </section>

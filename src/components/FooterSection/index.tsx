@@ -15,7 +15,7 @@ const FooterSection = () => {
     <footer className={styles.footer}>
       <a href={emailUrl} draggable={false}>
         <button type="button" className={styles.bounceToTop}>
-          Write Marc
+          Get in touch
         </button>
       </a>
       <a

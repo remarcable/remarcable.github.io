@@ -42,6 +42,10 @@
     right: 20px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.75em;
+
+    @media #{$small-and-down} {
+      display: none;
+    }
   }
 }
 

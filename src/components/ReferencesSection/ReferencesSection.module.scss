@@ -8,9 +8,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 850px;
-  @media #{$medium-and-down} {
-    height: auto;
-  }
+  height: auto;
 }
 
 .headline {

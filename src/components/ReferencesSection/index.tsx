@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 
-import blogImage from "./images/blog.jpg";
 import clickTheNumberImage from "./images/clickthenumber.png";
-import druckUndSchwaerzeImage from "./images/druckundschwaerze.png";
+import audiateImage from "./images/audiate.png";
+import blogImage from "./images/blog.jpg";
+import stellarWindImage from "./images/stellar-wind.png";
 import livegameImage from "./images/livegame.png";
 
 import styles from "./ReferencesSection.module.scss";
@@ -12,9 +13,15 @@ import containerStyles from "styles/containers.module.scss";
 
 const references = [
   {
-    url: "https://blog.marcnitzsche.de",
+    url: "https://projects.marcnitzsche.de/audiate",
+    image: audiateImage,
+    altText: "Audiate",
+    caption: "Audiate",
+  },
+  {
+    url: "https://blog.marcnitzsche.de/",
     image: blogImage,
-    altText: "Marc's Blog",
+    altText: "Personal Blog",
     caption: "Personal Blog",
   },
   {
@@ -24,10 +31,10 @@ const references = [
     caption: "Reaction Game",
   },
   {
-    url: "https://web.archive.org/web/20180307003350/http://druckundschwaerze.de/",
-    image: druckUndSchwaerzeImage,
-    altText: "Druck und Schwärze",
-    caption: "School Newspaper",
+    url: "https://stellarwind.netlify.app/",
+    image: stellarWindImage,
+    altText: "Stellar Wind",
+    caption: "Stellar Wind",
   },
   {
     url: "https://github.com/wbp-dev/livegame",
@@ -39,19 +46,17 @@ const references = [
 
 const ReferencesSection = () => (
   <section className={clsx(containerStyles.section, styles.references)}>
-    <h1 className={clsx(textStyles.H1, textStyles.headline)}>Projects</h1>
-    <div className={styles.verticalContainer}></div>
-    <div className={styles.verticalContainer}>
+    <h1 className={clsx(textStyles.H1, styles.headline)}>Projects</h1>
+    <div className={styles.referencesContainer}>
       {references.map((reference) => (
         <Reference key={reference.url} {...reference} />
       ))}
     </div>
-    <div className={styles.verticalContainer}>
-      <p className={styles.doSomethingParagraph}>
-        Feel free to contact me using my email below. <br />
-        It&apos;m looking forward to it!
-      </p>
-    </div>
+
+    <p className={styles.doSomethingParagraph}>
+      Feel free to contact me using my email below. I&apos;m looking forward to
+      it!
+    </p>
   </section>
 );
 

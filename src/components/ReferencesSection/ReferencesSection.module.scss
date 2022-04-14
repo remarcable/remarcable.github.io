@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 850px;
+  min-height: max(850px, 100vh);
   height: auto;
 }
 

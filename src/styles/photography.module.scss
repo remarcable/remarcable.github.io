@@ -1,0 +1,16 @@
+@import "styles/variables.scss";
+
+.wrapper {
+  max-width: $max-width;
+  margin: 144px auto;
+  padding: 20px;
+}
+
+.heading {
+  font-family: $primary-font;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 64px;
+  letter-spacing: -4px;
+  margin-bottom: 48px;
+}

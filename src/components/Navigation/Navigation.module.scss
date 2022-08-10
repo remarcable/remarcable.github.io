@@ -1,0 +1,44 @@
+@import "styles/variables.scss";
+
+.navigation {
+  font-family: $secondary-font;
+  position: absolute;
+  z-index: 2;
+  text-transform: uppercase;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  margin-right: max(20px, (100vw - $max-width - 10px) / 2);
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  &.darkVariant {
+    a {
+      color: rgba(0, 0, 0, 0.8);
+      text-decoration: none;
+
+      &:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    li {
+      display: block;
+      margin: 0 10px;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import clsx from "clsx";
 
 import clickTheNumberImage from "./images/clickthenumber.png";
@@ -6,6 +7,7 @@ import audiateImage from "./images/audiate.png";
 import blogImage from "./images/blog.jpg";
 import stellarWindImage from "./images/stellar-wind.png";
 import livegameImage from "./images/livegame.png";
+import photographyImage from "./images/photography.png";
 
 import styles from "./ReferencesSection.module.scss";
 import textStyles from "styles/text.module.scss";
@@ -42,6 +44,12 @@ const references = [
     altText: "Livegame",
     caption: "Livegame",
   },
+  {
+    url: "/photography",
+    image: photographyImage,
+    altText: "Photography",
+    caption: "Photography",
+  },
 ];
 
 const ReferencesSection = () => (
@@ -67,21 +75,23 @@ const Reference: React.FC<{
   caption: string;
 }> = ({ url, image, altText, caption }) => (
   <figure className={styles.referenceWrapper}>
-    <a href={url} target="_blank noopener" className={styles.referenceLink}>
-      <Image
-        src={image}
-        sizes="25vw"
-        layout="fill"
-        className={styles.referenceImage}
-        placeholder="blur"
-        alt={altText}
-        draggable={false}
-      />
-      <figcaption className={styles.slideUp}>
-        <span className={styles.referenceCaption}>{caption}</span>
-      </figcaption>
-      <button className={styles.referenceAction}>Visit Now</button>
-    </a>
+    <Link href={url}>
+      <a className={styles.referenceLink}>
+        <Image
+          src={image}
+          sizes="25vw"
+          layout="fill"
+          className={styles.referenceImage}
+          placeholder="blur"
+          alt={altText}
+          draggable={false}
+        />
+        <figcaption className={styles.slideUp}>
+          <span className={styles.referenceCaption}>{caption}</span>
+        </figcaption>
+        <button className={styles.referenceAction}>Visit Now</button>
+      </a>
+    </Link>
   </figure>
 );
 

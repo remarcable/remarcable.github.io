@@ -29,7 +29,23 @@ const Photography: NextPage<PhotographyPageProps> = ({ images }) => {
       <Navigation variant="dark" />
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Photography</h1>
-        <Gallery photos={shuffledImages} margin={5} />
+        <Gallery
+          photos={shuffledImages}
+          margin={5}
+          targetRowHeight={400}
+          renderImage={({ photo, margin }) => (
+            <img
+              key={photo.src}
+              src={photo.src}
+              srcSet={photo.srcSet}
+              alt="..."
+              width={photo.width}
+              height={photo.height}
+              loading="lazy"
+              className={styles.photo}
+            />
+          )}
+        />
       </div>
     </>
   );
@@ -94,10 +110,12 @@ const getImagesFromS3 = async ({
   }
 
   return data.Contents?.map((file) => {
-    const options = { auto: "compress,format" };
+    const params = {
+      auto: "compress,format",
+    };
     return {
-      src: client.buildURL(file.Key, { ...options, h: 400 }),
-      srcSet: client.buildSrcSet(file.Key, { auto: "compress,format" }),
+      src: client.buildURL(file.Key, params),
+      srcSet: client.buildSrcSet(file.Key, params, { maxWidth: 1000 }),
       ...getFileDimensionsFromName(file.Key),
     };
   });

@@ -8,9 +8,24 @@
 
 .heading {
   font-family: $primary-font;
+  text-decoration: underline;
   font-weight: 700;
   font-style: italic;
   font-size: 64px;
   letter-spacing: -4px;
   margin-bottom: 48px;
+}
+
+.photo {
+  display: block;
+  margin: 5px;
+  background-color: #f1f3f5;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(0.99);
+    filter: brightness(0.8);
+    cursor: pointer;
+  }
 }

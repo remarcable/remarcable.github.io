@@ -111,7 +111,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const getImageSources = ({ imageFileNames }: { imageFileNames: string[] }) => {
   const domain = process.env.NEXT_PUBLIC_STATIC_FILE_URL;
   if (!domain) {
-    throw new Error("No Imgix URL provided");
+    throw new Error("No static file URL provided");
   }
 
   return imageFileNames.map((fileName) => ({

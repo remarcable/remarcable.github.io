@@ -15,8 +15,8 @@
   }
 
   h1 {
-    margin-bottom: 5%;
-    margin-left: 5%;
+    margin-bottom: max(5%, (100vw - $max-width - 10px) / 4);
+    margin-left: max(5%, (100vw - $max-width - 10px) / 2);
     text-shadow: rgba(0, 0, 0, 0.5) 10px 10px 25px;
     font-size: 7em;
 

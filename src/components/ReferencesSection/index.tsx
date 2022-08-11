@@ -47,8 +47,8 @@ const references = [
   {
     url: "/photography",
     image: photographyImage,
-    altText: "Photography",
-    caption: "Photography",
+    altText: "Photo Gallery",
+    caption: "Photo Gallery",
   },
 ];
 

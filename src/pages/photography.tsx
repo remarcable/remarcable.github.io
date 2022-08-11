@@ -10,7 +10,7 @@ import ImgixClient from "@imgix/js-core";
 import Navigation from "components/Navigation";
 
 import "photoswipe/dist/photoswipe.css";
-import * as styles from "styles/photography.module.scss";
+import * as styles from "styles/pages/photography.module.scss";
 
 const PhotoGallery = dynamic(() => import("react-photo-gallery"), {
   suspense: true,
@@ -31,13 +31,14 @@ interface PhotographyPageProps {
   }[];
 }
 
-const Photography: NextPage<PhotographyPageProps> = ({ images }) => {
+const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
   // Show the pictures in a different order each month to add variety
   const shuffledImages = useMemo(() => {
+    const images = getImageSources({ imageFileNames });
     const today = new Date();
     const seed = +`${today.getFullYear()}${today.getMonth()}`;
     return shuffleSeed([...images], seed);
-  }, [images]);
+  }, [imageFileNames]);
 
   return (
     <>
@@ -47,11 +48,7 @@ const Photography: NextPage<PhotographyPageProps> = ({ images }) => {
 
         <Suspense fallback={<div className={styles.fallback} />}>
           <PhotoswipeGallery
-            options={{
-              zoom: false,
-              counter: false,
-              bgOpacity: 0.9,
-            }}
+            options={{ zoom: false, counter: false, bgOpacity: 0.9 }}
           >
             <PhotoGallery
               photos={shuffledImages}
@@ -94,43 +91,51 @@ export const getStaticProps: GetStaticProps = async () => {
   const secretAccessKey = process.env.LOCAL_AWS_SECRET_ACCESS_KEY;
   const awsRegion = process.env.LOCAL_AWS_REGION;
   const bucketName = process.env.LOCAL_AWS_BUCKET_NAME;
-  const staticPublicUrl = process.env.STATIC_PUBLIC_URL;
 
-  if (
-    !accessKeyId ||
-    !secretAccessKey ||
-    !bucketName ||
-    !awsRegion ||
-    !staticPublicUrl
-  ) {
+  if (!accessKeyId || !secretAccessKey || !bucketName || !awsRegion) {
     throw new Error("No AWS credentials provided");
   }
 
-  const images = await getImagesFromS3({
+  const imageFileNames = await getImagesFromS3({
     accessKeyId,
     secretAccessKey,
     awsRegion,
     bucketName,
-    staticPublicUrl,
   });
 
-  return { props: { images } };
+  return { props: { imageFileNames } };
 };
 
-export default Photography;
+const getImageSources = ({ imageFileNames }: { imageFileNames: string[] }) => {
+  const domain = process.env.NEXT_PUBLIC_IMGIX_URL;
+  if (!domain) {
+    throw new Error("No Imgix URL provided");
+  }
+
+  const imgixClient = new ImgixClient({ domain });
+
+  return imageFileNames.map((fileName) => {
+    const params = {
+      auto: "compress,format",
+    };
+    return {
+      src: imgixClient.buildURL(fileName, params),
+      srcSet: imgixClient.buildSrcSet(fileName, params, { maxWidth: 1000 }),
+      ...getFileDimensionsFromName(fileName),
+    };
+  });
+};
 
 const getImagesFromS3 = async ({
   accessKeyId,
   secretAccessKey,
   awsRegion,
   bucketName,
-  staticPublicUrl,
 }: {
   accessKeyId: string;
   secretAccessKey: string;
   awsRegion: string;
   bucketName: string;
-  staticPublicUrl: string;
 }) => {
   const s3Client = new S3Client({
     region: awsRegion,
@@ -147,28 +152,19 @@ const getImagesFromS3 = async ({
     throw new Error("Can't display all objects in the bucket");
   }
 
-  const imgixClient = new ImgixClient({
-    domain: "static.marcnitzsche.de",
-  });
-
-  return data.Contents?.map((file) => {
-    const params = {
-      auto: "compress,format",
-    };
-    return {
-      src: imgixClient.buildURL(file.Key, params),
-      srcSet: imgixClient.buildSrcSet(file.Key, params, { maxWidth: 1000 }),
-      ...getFileDimensionsFromName(file.Key),
-    };
-  });
+  return data.Contents?.map((file) => file.Key as string) ?? [];
 };
 
 const getFileDimensionsFromName = (fileName: string) => {
-  const {
-    groups: { width, height },
-  } = /\w+-(?<width>\d+)x(?<height>\d+)\.\w+/.exec(fileName) || {
-    groups: { width: null, height: null },
-  };
+  const [, width, height] = /\w+-(?<width>\d+)x(?<height>\d+)\.\w+/.exec(
+    fileName
+  ) || [, 1, 1];
 
-  return { width: +width / 1000 || null, height: +height / 1000 || null };
+  if (!width || !height) {
+    return { width: 1, height: 1 };
+  }
+
+  return { width: +width / 1000 || 1, height: +height / 1000 || 1 };
 };
+
+export default Photography;

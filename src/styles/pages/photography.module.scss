@@ -29,8 +29,7 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(0.99);
-    filter: brightness(0.8);
+    filter: brightness(0.9);
     cursor: pointer;
   }
 }

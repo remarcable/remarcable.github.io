@@ -1,14 +1,27 @@
+import { useMemo, Suspense } from "react";
 import type { GetStaticProps, NextPage } from "next";
+import dynamic from "next/dynamic";
+
 import { ListObjectsV2Command, S3Client } from "@aws-sdk/client-s3";
-import Gallery from "react-photo-gallery";
+
 import shuffleSeed from "knuth-shuffle-seeded";
 import ImgixClient from "@imgix/js-core";
-import * as styles from "styles/photography.module.scss";
+
 import Navigation from "components/Navigation";
 
-var client = new ImgixClient({
-  domain: "static.marcnitzsche.de",
+import "photoswipe/dist/photoswipe.css";
+import * as styles from "styles/photography.module.scss";
+
+const PhotoGallery = dynamic(() => import("react-photo-gallery"), {
+  suspense: true,
 });
+
+const PhotoswipeGallery = dynamic(() =>
+  import("react-photoswipe-gallery").then((module) => module.Gallery)
+);
+const PhotoswipeItem = dynamic(() =>
+  import("react-photoswipe-gallery").then((module) => module.Item)
+);
 
 interface PhotographyPageProps {
   images: {
@@ -20,32 +33,57 @@ interface PhotographyPageProps {
 
 const Photography: NextPage<PhotographyPageProps> = ({ images }) => {
   // Show the pictures in a different order each month to add variety
-  const today = new Date();
-  const seed = +`${today.getFullYear()}${today.getMonth()}`;
-  const shuffledImages = shuffleSeed([...images], seed);
+  const shuffledImages = useMemo(() => {
+    const today = new Date();
+    const seed = +`${today.getFullYear()}${today.getMonth()}`;
+    return shuffleSeed([...images], seed);
+  }, [images]);
 
   return (
     <>
       <Navigation variant="dark" />
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Photography</h1>
-        <Gallery
-          photos={shuffledImages}
-          margin={5}
-          targetRowHeight={400}
-          renderImage={({ photo, margin }) => (
-            <img
-              key={photo.src}
-              src={photo.src}
-              srcSet={photo.srcSet}
-              alt="..."
-              width={photo.width}
-              height={photo.height}
-              loading="lazy"
-              className={styles.photo}
+
+        <Suspense fallback={<div className={styles.fallback} />}>
+          <PhotoswipeGallery
+            options={{
+              zoom: false,
+              counter: false,
+              bgOpacity: 0.9,
+            }}
+          >
+            <PhotoGallery
+              photos={shuffledImages}
+              margin={5}
+              targetRowHeight={400}
+              renderImage={({ photo, index }) => (
+                <PhotoswipeItem
+                  key={index}
+                  original={photo.src}
+                  thumbnail={photo.src}
+                  originalSrcset={photo.srcSet as string}
+                  width={photo.width * 5}
+                  height={photo.height * 5}
+                >
+                  {({ ref, open }) => (
+                    <img
+                      alt="..."
+                      loading="lazy"
+                      ref={ref}
+                      src={photo.src}
+                      srcSet={photo.srcSet}
+                      width={photo.width}
+                      height={photo.height}
+                      className={styles.photo}
+                      onClick={open}
+                    />
+                  )}
+                </PhotoswipeItem>
+              )}
             />
-          )}
-        />
+          </PhotoswipeGallery>
+        </Suspense>
       </div>
     </>
   );
@@ -109,13 +147,17 @@ const getImagesFromS3 = async ({
     throw new Error("Can't display all objects in the bucket");
   }
 
+  const imgixClient = new ImgixClient({
+    domain: "static.marcnitzsche.de",
+  });
+
   return data.Contents?.map((file) => {
     const params = {
       auto: "compress,format",
     };
     return {
-      src: client.buildURL(file.Key, params),
-      srcSet: client.buildSrcSet(file.Key, params, { maxWidth: 1000 }),
+      src: imgixClient.buildURL(file.Key, params),
+      srcSet: imgixClient.buildSrcSet(file.Key, params, { maxWidth: 1000 }),
       ...getFileDimensionsFromName(file.Key),
     };
   });

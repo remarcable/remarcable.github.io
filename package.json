@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.145.0",
-    "@imgix/js-core": "^3.6.0",
     "clsx": "^1.2.1",
     "knuth-shuffle-seeded": "^1.0.6",
     "next": "^12.2.4",

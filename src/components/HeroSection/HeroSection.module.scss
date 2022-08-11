@@ -15,8 +15,8 @@
   }
 
   h1 {
-    margin-bottom: 5%;
-    margin-left: 5%;
+    margin-bottom: max(5%, (100vw - $max-width - 10px) / 4);
+    margin-left: max(5%, (100vw - $max-width - 10px) / 2);
     text-shadow: rgba(0, 0, 0, 0.5) 10px 10px 25px;
     font-size: 7em;
 
@@ -44,35 +44,4 @@
   object-position: 100% 72%;
   pointer-events: none;
   user-select: none;
-}
-
-.navigation {
-  font-family: $secondary-font;
-  position: absolute;
-  z-index: 2;
-  text-transform: uppercase;
-  top: 0;
-  right: 0;
-  margin: 20px;
-
-  a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
-
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-
-    li {
-      display: block;
-      margin: 0 10px;
-    }
-  }
 }

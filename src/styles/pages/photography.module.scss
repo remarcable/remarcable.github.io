@@ -41,12 +41,16 @@
     margin-bottom: 24px;
   }
 
+  .tinyIndent {
+    margin-left: -2px;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
   }
 
-  span {
+  .quoteOrigin {
     font-style: italic;
     color: #cfd0d3;
     display: block;
@@ -57,7 +61,7 @@
   }
 
   &:hover {
-    span {
+    .quoteOrigin {
       opacity: 1;
     }
   }

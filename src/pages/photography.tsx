@@ -48,15 +48,20 @@ const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Photography</h1>
         <p className={styles.bodyText}>
-          To see the world, things dangerous to come to;
-          <br /> to see behind walls, to draw closer,
+          <span className={styles.tinyIndent}>
+            To see the world, things dangerous to come to,
+          </span>
+          <br />
+          to see behind walls, draw closer,
           <br />
           to find each other and to feel.
           <br />
-          That is the purpose of Life.
+          That is the purpose of life.
           <Link href="https://www.youtube.com/watch?v=YofU2hm8_O4">
             <a target="_blank" rel="noreferrer">
-              <span>– from the movie « Walter Mitty »</span>
+              <span className={styles.quoteOrigin}>
+                – from « The Secret Life of Walter Mitty »
+              </span>
             </a>
           </Link>
         </p>

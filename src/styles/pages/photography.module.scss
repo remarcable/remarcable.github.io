@@ -4,6 +4,10 @@
   max-width: $max-width;
   margin: 0 auto;
   padding: 144px 20px;
+
+  @media #{$super-small-and-down} {
+    padding: 144px 5px;
+  }
 }
 
 .heading {
@@ -12,10 +16,12 @@
   font-style: italic;
   font-size: 64px;
   letter-spacing: -3px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 
   @media #{$super-small-and-down} {
     font-size: 48px;
+    margin-left: 10px;
+    margin-bottom: 24px;
   }
 }
 

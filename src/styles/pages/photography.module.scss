@@ -3,7 +3,8 @@
 .wrapper {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 144px 20px;
+  padding: 144px 36px;
+  color: #1e2229;
 
   @media #{$super-small-and-down} {
     padding: 144px 5px;
@@ -16,12 +17,49 @@
   font-style: italic;
   font-size: 64px;
   letter-spacing: -3px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 
   @media #{$super-small-and-down} {
     font-size: 48px;
     margin-left: 10px;
     margin-bottom: 24px;
+    letter-spacing: -2.5px;
+  }
+}
+
+.bodyText {
+  font-family: $secondary-font;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+
+  @media #{$super-small-and-down} {
+    font-size: 16px;
+    padding: 0 12px;
+    margin-bottom: 24px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  span {
+    font-style: italic;
+    color: #cfd0d3;
+    display: block;
+    margin-top: 8px;
+    margin-left: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+    }
   }
 }
 

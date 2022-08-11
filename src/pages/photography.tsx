@@ -1,7 +1,9 @@
 import { useMemo, Suspense, LegacyRef } from "react";
-import type { GetStaticProps, NextPage } from "next";
+
+import Link from "next/link";
 import Image from "next/future/image";
 import dynamic from "next/dynamic";
+import type { GetStaticProps, NextPage } from "next";
 
 import type { GalleryProps, ItemProps } from "react-photoswipe-gallery";
 
@@ -45,6 +47,19 @@ const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
       <Navigation variant="dark" />
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Photography</h1>
+        <p className={styles.bodyText}>
+          To see the world, things dangerous to come to;
+          <br /> to see behind walls, to draw closer,
+          <br />
+          to find each other and to feel.
+          <br />
+          That is the purpose of Life.
+          <Link href="https://www.youtube.com/watch?v=YofU2hm8_O4">
+            <a target="_blank" rel="noreferrer">
+              <span>– from the movie « Walter Mitty »</span>
+            </a>
+          </Link>
+        </p>
 
         <Suspense fallback={<div className={styles.fallback} />}>
           <PhotoswipeGallery

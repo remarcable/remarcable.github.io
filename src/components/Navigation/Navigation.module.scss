@@ -10,6 +10,10 @@
   margin: 20px;
   margin-right: max(20px, (100vw - $max-width - 10px) / 2);
 
+  @media #{$super-small-and-down} {
+    font-size: 12px;
+  }
+
   a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;

@@ -88,7 +88,7 @@ const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
                       onClick={open}
                     >
                       <Image
-                        alt="..."
+                        alt=""
                         src={photo.src}
                         width={photo.width}
                         height={photo.height}

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 
 const GOOGLE_SITE_VERIFICATION =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -10,13 +11,13 @@ const page = {
   themeColor: "#103981",
 };
 
-const PageHead = () => (
+const PageHead: React.FC<{ pageTitle?: string }> = ({ pageTitle }) => (
   <Head>
     <meta charSet="utf-8" />
     <meta httpEquiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
-    <title>{page.title}</title>
+    <title>{pageTitle ? `${pageTitle} | ${page.title}` : page.title}</title>
     <meta name="description" content={page.description} />
     <meta name="subject" content="person, cv" />
     <link rel="author" href="humans.txt" />

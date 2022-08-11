@@ -1,34 +1,33 @@
-import { useMemo, Suspense } from "react";
+import { useMemo, Suspense, LegacyRef } from "react";
 import type { GetStaticProps, NextPage } from "next";
+import Image from "next/future/image";
 import dynamic from "next/dynamic";
+
+import type { GalleryProps, ItemProps } from "react-photoswipe-gallery";
 
 import { ListObjectsV2Command, S3Client } from "@aws-sdk/client-s3";
 
 import shuffleSeed from "knuth-shuffle-seeded";
-import ImgixClient from "@imgix/js-core";
 
+import PageHead from "components/PageHead";
 import Navigation from "components/Navigation";
 
 import "photoswipe/dist/photoswipe.css";
-import * as styles from "styles/pages/photography.module.scss";
+import styles from "styles/pages/photography.module.scss";
 
 const PhotoGallery = dynamic(() => import("react-photo-gallery"), {
   suspense: true,
 });
 
-const PhotoswipeGallery = dynamic(() =>
+const PhotoswipeGallery = dynamic<GalleryProps>(() =>
   import("react-photoswipe-gallery").then((module) => module.Gallery)
 );
-const PhotoswipeItem = dynamic(() =>
+const PhotoswipeItem = dynamic<ItemProps>(() =>
   import("react-photoswipe-gallery").then((module) => module.Item)
 );
 
 interface PhotographyPageProps {
-  images: {
-    src: string;
-    width: number;
-    height: number;
-  }[];
+  imageFileNames: string[];
 }
 
 const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
@@ -42,6 +41,7 @@ const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
 
   return (
     <>
+      <PageHead pageTitle="Photography" />
       <Navigation variant="dark" />
       <div className={styles.wrapper}>
         <h1 className={styles.heading}>Photography</h1>
@@ -59,22 +59,24 @@ const Photography: NextPage<PhotographyPageProps> = ({ imageFileNames }) => {
                   key={index}
                   original={photo.src}
                   thumbnail={photo.src}
-                  originalSrcset={photo.srcSet as string}
                   width={photo.width * 5}
                   height={photo.height * 5}
                 >
                   {({ ref, open }) => (
-                    <img
-                      alt="..."
-                      loading="lazy"
-                      ref={ref}
-                      src={photo.src}
-                      srcSet={photo.srcSet}
-                      width={photo.width}
-                      height={photo.height}
-                      className={styles.photo}
+                    <div
+                      ref={ref as LegacyRef<HTMLImageElement>}
                       onClick={open}
-                    />
+                    >
+                      <Image
+                        alt="..."
+                        src={photo.src}
+                        width={photo.width}
+                        height={photo.height}
+                        className={styles.photo}
+                        priority={index <= 2}
+                        sizes="50vw"
+                      />
+                    </div>
                   )}
                 </PhotoswipeItem>
               )}
@@ -107,23 +109,15 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const getImageSources = ({ imageFileNames }: { imageFileNames: string[] }) => {
-  const domain = process.env.NEXT_PUBLIC_IMGIX_URL;
+  const domain = process.env.NEXT_PUBLIC_STATIC_FILE_URL;
   if (!domain) {
     throw new Error("No Imgix URL provided");
   }
 
-  const imgixClient = new ImgixClient({ domain });
-
-  return imageFileNames.map((fileName) => {
-    const params = {
-      auto: "compress,format",
-    };
-    return {
-      src: imgixClient.buildURL(fileName, params),
-      srcSet: imgixClient.buildSrcSet(fileName, params, { maxWidth: 1000 }),
-      ...getFileDimensionsFromName(fileName),
-    };
-  });
+  return imageFileNames.map((fileName) => ({
+    src: `https://${domain}/${fileName}`,
+    ...getFileDimensionsFromName(fileName),
+  }));
 };
 
 const getImagesFromS3 = async ({

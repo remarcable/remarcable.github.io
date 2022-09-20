@@ -8,3 +8,6 @@
 /simple-but-ugly-react-calculator/* https://projects.marcnitzsche.de/simple-but-ugly-react-calculator/:splat
 /cashier/* https://projects.marcnitzsche.de/cashier/:splat
 /sidebar-animation/* https://projects.marcnitzsche.de/sidebar-animation/:splat
+
+/blog/* https://blog.marcnitzsche.de/blog/:splat 200
+/blog/ https://blog.marcnitzsche.de/blog 200

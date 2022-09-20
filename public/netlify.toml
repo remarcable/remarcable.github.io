@@ -1,0 +1,13 @@
+[[redirects]]
+from = "/blog/*"
+to = "https://blog.marcnitzsche.de/blog/:splat"
+status = 200
+force = true
+headers = {X-Forwarded-Host = "www.marcnitzsche.de"}
+
+[[redirects]]
+from = "/blog"
+to = "https://blog.marcnitzsche.de/blog/"
+status = 200
+force = true
+headers = {X-Forwarded-Host = "www.marcnitzsche.de"}

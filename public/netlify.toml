@@ -3,11 +3,11 @@ from = "/blog/*"
 to = "https://blog.marcnitzsche.de/blog/:splat"
 status = 200
 force = true
-headers = {X-Forwarded-Host = "www.marcnitzsche.de"}
+headers = {X-Forwarded-Host = "blog.marcnitzsche.de"}
 
 [[redirects]]
 from = "/blog"
 to = "https://blog.marcnitzsche.de/blog/"
 status = 200
 force = true
-headers = {X-Forwarded-Host = "www.marcnitzsche.de"}
+headers = {X-Forwarded-Host = "blog.marcnitzsche.de"}

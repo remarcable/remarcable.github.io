@@ -5,7 +5,7 @@ import styles from "./Navigation.module.scss";
 const navItems = [
   { title: "Home", url: "/" },
   { title: "Photography", url: "/photography" },
-  { title: "Blog", url: "https://blog.marcnitzsche.de" },
+  { title: "Blog", url: "https://www.marcnitzsche.de/blog" },
   { title: "GitHub", url: "https://github.com/remarcable" },
 ];
 

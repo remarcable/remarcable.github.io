@@ -15,19 +15,19 @@ import containerStyles from "styles/containers.module.scss";
 
 const references = [
   {
-    url: "https://projects.marcnitzsche.de/audiate",
+    url: "https://www.marcnitzsche.de/audiate",
     image: audiateImage,
     altText: "Audiate",
     caption: "Audiate",
   },
   {
-    url: "https://blog.marcnitzsche.de/",
+    url: "https://www.marcnitzsche.de/blog",
     image: blogImage,
     altText: "Personal Blog",
     caption: "Personal Blog",
   },
   {
-    url: "https://projects.marcnitzsche.de/ClickTheNumber",
+    url: "https://www.marcnitzsche.de/ClickTheNumber",
     image: clickTheNumberImage,
     altText: "Click The Number",
     caption: "Reaction Game",

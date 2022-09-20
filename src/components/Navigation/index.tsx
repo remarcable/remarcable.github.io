@@ -3,9 +3,9 @@ import Link from "next/link";
 import styles from "./Navigation.module.scss";
 
 const navItems = [
-  { title: "Home", url: "/" },
-  { title: "Photography", url: "/photography" },
-  { title: "Blog", url: "https://www.marcnitzsche.de/blog" },
+  { title: "Home", url: "https://www.marcnitzsche.de" },
+  { title: "About", url: "https://www.marcnitzsche.de/about" },
+  { title: "Photography", url: "/" },
   { title: "GitHub", url: "https://github.com/remarcable" },
 ];
 

@@ -6,9 +6,9 @@
   z-index: 2;
   text-transform: uppercase;
   top: 0;
-  right: 0;
+  left: 0;
   margin: 36px;
-  margin-right: max(36px, (100vw - $max-width - 10px) / 2);
+  margin-left: max(36px, (100vw - $max-width - 10px) / 2);
 
   @media #{$super-small-and-down} {
     font-size: 12px;
@@ -40,6 +40,8 @@
     display: flex;
     flex-direction: row;
     list-style: none;
+
+    padding-left: 0;
 
     li {
       display: block;

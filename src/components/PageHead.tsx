@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React from "react";
 
 const GOOGLE_SITE_VERIFICATION =
@@ -11,28 +12,50 @@ const page = {
   themeColor: "#103981",
 };
 
-const PageHead: React.FC<{ pageTitle?: string }> = ({ pageTitle }) => (
-  <Head>
-    <meta charSet="utf-8" />
-    <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
-    <title>{pageTitle ? `${pageTitle} | ${page.title}` : page.title}</title>
-    <meta name="description" content={page.description} />
-    <meta name="subject" content="person, cv" />
-    <link rel="author" href="humans.txt" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <link
-      rel="mask-icon"
-      href="/safari-pinned-tab.svg"
-      color={page.themeColor}
-    />
-    <meta name="theme-color" content={page.themeColor} />
-    <link rel="canonical" href={ROOT_URL} />
-  </Head>
-);
+const PageHead: React.FC<{ pageTitle?: string }> = ({ pageTitle }) => {
+  const router = useRouter();
+  const canonicalUrl = `${ROOT_URL}${router.asPath}`;
+
+  return (
+    <Head>
+      <meta charSet="utf-8" />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="google-site-verification"
+        content={GOOGLE_SITE_VERIFICATION}
+      />
+      <title>{pageTitle ? `${pageTitle} | ${page.title}` : page.title}</title>
+      <meta name="description" content={page.description} />
+      <meta name="subject" content="person, cv" />
+      <link rel="author" href="humans.txt" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/manifest.json" />
+      <link
+        rel="mask-icon"
+        href="/safari-pinned-tab.svg"
+        color={page.themeColor}
+      />
+      <meta name="theme-color" content={page.themeColor} />
+      <link rel="canonical" href={canonicalUrl} />
+    </Head>
+  );
+};
 
 export default PageHead;

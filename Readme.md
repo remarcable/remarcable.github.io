@@ -1,6 +1,6 @@
 # marcnitzsche.de
 
-Personal Website
+Personal Website, currently only used for my [photography page](https://photography.marcnitzsche.de).
 
 ## Development
 
